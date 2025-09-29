@@ -20,25 +20,46 @@ function Index() {
 
   const services = [
     {
-      id: 'haircut',
-      title: 'Женские стрижки',
-      description: 'Стильные стрижки любой сложности',
-      price: 'от 2 500 ₽',
+      id: 'mens-haircut',
+      title: 'Мужские стрижки',
+      description: 'Классические и современные стрижки',
+      price: 'от 1 500 ₽',
       icon: 'Scissors'
     },
     {
-      id: 'styling',
-      title: 'Укладки',
-      description: 'Праздничные и повседневные укладки',
-      price: 'от 1 800 ₽',
+      id: 'womens-haircut',
+      title: 'Женские стрижки',
+      description: 'Стильные стрижки любой сложности',
+      price: 'от 2 500 ₽',
       icon: 'Sparkles'
+    },
+    {
+      id: 'kids-haircut',
+      title: 'Детские стрижки',
+      description: 'Аккуратные стрижки для малышей',
+      price: 'от 800 ₽',
+      icon: 'Heart'
     },
     {
       id: 'coloring',
       title: 'Окрашивание',
-      description: 'Сложные техники окрашивания',
-      price: 'от 4 000 ₽',
+      description: 'Все виды окрашивания волос',
+      price: 'от 3 000 ₽',
       icon: 'Palette'
+    },
+    {
+      id: 'styling',
+      title: 'Укладки',
+      description: 'Праздничные и повседневные',
+      price: 'от 1 200 ₽',
+      icon: 'Wand2'
+    },
+    {
+      id: 'beard',
+      title: 'Бритье и борода',
+      description: 'Моделирование бороды и усов',
+      price: 'от 800 ₽',
+      icon: 'User'
     }
   ];
 
@@ -46,17 +67,17 @@ function Index() {
     {
       name: 'Анна Петрова',
       rating: 5,
-      text: 'Замечательный мастер! Стрижка получилась именно такой, как я хотела. Обязательно приду снова!'
+      text: 'Привожу сюда всю семью! Муж стрижется, я делаю окрашивание, дети тоже любят сюда ходить!'
     },
     {
-      name: 'Мария Сидорова',
+      name: 'Александр Михайлов',
       rating: 5,
-      text: 'Отличная атмосфера и профессиональный подход. Окрашивание выполнено безупречно!'
+      text: 'Отличные мастера! Мужская стрижка и борода на высшем уровне. Рекомендую!'
     },
     {
-      name: 'Елена Козлова',
+      name: 'Мария с Машей',
       rating: 5,
-      text: 'Лучший салон в городе! Всегда остаюсь довольна результатом и сервисом.'
+      text: 'Приходим с 5-летней дочкой. Мастера умеют найти подход к детям. Очень довольны!'
     }
   ];
 
@@ -87,7 +108,7 @@ function Index() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Icon name="Scissors" className="text-primary" size={24} />
-              <span className="text-xl font-bold text-gradient">BeautyStudio</span>
+              <span className="text-xl font-bold text-gradient">FamilyBarber</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <button 
@@ -209,13 +230,13 @@ function Index() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-                Создаем
-                <span className="text-gradient block">красоту</span>
-                каждый день
+                Стиль для
+                <span className="text-gradient block">каждого</span>
+                в семье
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Профессиональные услуги парикмахера в уютной атмосфере. 
-                Женские стрижки, укладки и окрашивание от опытного мастера.
+                Универсальная парикмахерская для всей семьи. Мужские, женские и детские стрижки, 
+                окрашивание, укладки и уход за бородой от опытных мастеров.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -249,7 +270,7 @@ function Index() {
                     <Icon name="Star" className="text-white" size={20} />
                   </div>
                   <div>
-                    <p className="font-semibold">500+ довольных клиентов</p>
+                    <p className="font-semibold">1000+ довольных клиентов</p>
                     <p className="text-sm text-muted-foreground">Рейтинг 4.9/5</p>
                   </div>
                 </div>
@@ -265,10 +286,10 @@ function Index() {
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">Наши услуги</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Предлагаем полный спектр парикмахерских услуг для создания вашего идеального образа
+              Полный спектр парикмахерских услуг для мужчин, женщин и детей любого возраста
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card 
                 key={service.id} 
@@ -308,7 +329,24 @@ function Index() {
                 <div className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="text-xl font-semibold mb-4 text-primary">Стрижки</h3>
+                      <h3 className="text-xl font-semibold mb-4 text-primary">Мужские стрижки</h3>
+                      <div className="space-y-3">
+                        <div className="flex justify-between">
+                          <span>Классическая стрижка</span>
+                          <span className="font-medium">от 1 500 ₽</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Модельная стрижка</span>
+                          <span className="font-medium">от 2 000 ₽</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Машинка</span>
+                          <span className="font-medium">1 000 ₽</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-4 text-primary">Женские стрижки</h3>
                       <div className="space-y-3">
                         <div className="flex justify-between">
                           <span>Женская стрижка</span>
@@ -325,53 +363,36 @@ function Index() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-4 text-primary">Укладки</h3>
+                      <h3 className="text-xl font-semibold mb-4 text-primary">Детские стрижки</h3>
                       <div className="space-y-3">
                         <div className="flex justify-between">
-                          <span>Укладка феном</span>
-                          <span className="font-medium">от 1 800 ₽</span>
+                          <span>Детская стрижка (до 12 лет)</span>
+                          <span className="font-medium">800 ₽</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>Локоны/выпрямление</span>
-                          <span className="font-medium">от 2 500 ₽</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span>Праздничная укладка</span>
-                          <span className="font-medium">от 3 500 ₽</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-4 text-primary">Окрашивание</h3>
-                      <div className="space-y-3">
-                        <div className="flex justify-between">
-                          <span>Тонирование</span>
-                          <span className="font-medium">от 3 000 ₽</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span>Окрашивание в один тон</span>
-                          <span className="font-medium">от 4 000 ₽</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span>Мелирование/Балаяж</span>
-                          <span className="font-medium">от 6 000 ₽</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-4 text-primary">Уход</h3>
-                      <div className="space-y-3">
-                        <div className="flex justify-between">
-                          <span>Маска для волос</span>
+                          <span>Подростковая (12-16 лет)</span>
                           <span className="font-medium">1 200 ₽</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>Ламинирование</span>
-                          <span className="font-medium">от 2 800 ₽</span>
+                          <span>Первая стрижка</span>
+                          <span className="font-medium">600 ₽</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-4 text-primary">Дополнительно</h3>
+                      <div className="space-y-3">
+                        <div className="flex justify-between">
+                          <span>Бритье бороды</span>
+                          <span className="font-medium">800 ₽</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>Ботокс для волос</span>
-                          <span className="font-medium">от 4 500 ₽</span>
+                          <span>Окрашивание волос</span>
+                          <span className="font-medium">от 3 000 ₽</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Укладка</span>
+                          <span className="font-medium">от 1 200 ₽</span>
                         </div>
                       </div>
                     </div>
@@ -586,7 +607,7 @@ function Index() {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <Icon name="Scissors" className="text-primary" size={24} />
-              <span className="text-xl font-bold">BeautyStudio</span>
+              <span className="text-xl font-bold">FamilyBarber</span>
             </div>
             <div className="flex items-center space-x-6">
               <a href="#" className="hover:text-primary transition-colors">
