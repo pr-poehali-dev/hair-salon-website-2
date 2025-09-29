@@ -107,7 +107,7 @@ function Index() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Icon name="Scissors" className="text-primary" size={24} />
+              <Icon name="Bird" className="text-primary" size={24} />
               <span className="text-xl font-bold text-gradient">КОЛИБРИ</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -606,7 +606,7 @@ function Index() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <Icon name="Scissors" className="text-primary" size={24} />
+              <Icon name="Bird" className="text-primary" size={24} />
               <span className="text-xl font-bold">КОЛИБРИ</span>
             </div>
             <div className="flex items-center space-x-6">
