@@ -108,7 +108,7 @@ function Index() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Icon name="Scissors" className="text-primary" size={24} />
-              <span className="text-xl font-bold text-gradient">FamilyBarber</span>
+              <span className="text-xl font-bold text-gradient">КОЛИБРИ</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <button 
@@ -607,7 +607,7 @@ function Index() {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <Icon name="Scissors" className="text-primary" size={24} />
-              <span className="text-xl font-bold">FamilyBarber</span>
+              <span className="text-xl font-bold">КОЛИБРИ</span>
             </div>
             <div className="flex items-center space-x-6">
               <a href="#" className="hover:text-primary transition-colors">
@@ -622,7 +622,7 @@ function Index() {
             </div>
           </div>
           <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/70">
-            <p>&copy; 2024 BeautyStudio. Все права защищены.</p>
+            <p>&copy; 2024 КОЛИБРИ. Все права защищены.</p>
           </div>
         </div>
       </footer>
