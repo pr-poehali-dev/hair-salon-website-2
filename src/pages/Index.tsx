@@ -8,6 +8,7 @@ import Icon from '@/components/ui/icon';
 
 function Index() {
   const [selectedService, setSelectedService] = useState('');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -62,6 +63,7 @@ function Index() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
   };
 
   const handleBooking = (e: React.FormEvent) => {
@@ -125,11 +127,80 @@ function Index() {
                 Контакты
               </button>
             </div>
-            <Button onClick={() => scrollToSection('booking')} className="gradient-gold text-white">
-              Записаться
-            </Button>
+            <div className="flex items-center space-x-4">
+              <Button 
+                onClick={() => scrollToSection('booking')} 
+                className="hidden sm:flex gradient-gold text-white"
+              >
+                Записаться
+              </Button>
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-border hover:bg-muted transition-colors"
+                aria-label="Открыть меню"
+              >
+                {isMobileMenuOpen ? (
+                  <Icon name="X" size={20} />
+                ) : (
+                  <Icon name="Menu" size={20} />
+                )}
+              </button>
+            </div>
           </div>
         </div>
+        
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-sm border-b border-border animate-fade-in">
+            <div className="container mx-auto px-4 py-6">
+              <div className="flex flex-col space-y-4">
+                <button 
+                  onClick={() => scrollToSection('home')}
+                  className="text-left text-foreground hover:text-primary transition-colors py-2 border-b border-border/30"
+                >
+                  Главная
+                </button>
+                <button 
+                  onClick={() => scrollToSection('services')}
+                  className="text-left text-foreground hover:text-primary transition-colors py-2 border-b border-border/30"
+                >
+                  Услуги
+                </button>
+                <button 
+                  onClick={() => scrollToSection('prices')}
+                  className="text-left text-foreground hover:text-primary transition-colors py-2 border-b border-border/30"
+                >
+                  Цены
+                </button>
+                <button 
+                  onClick={() => scrollToSection('reviews')}
+                  className="text-left text-foreground hover:text-primary transition-colors py-2 border-b border-border/30"
+                >
+                  Отзывы
+                </button>
+                <button 
+                  onClick={() => scrollToSection('booking')}
+                  className="text-left text-foreground hover:text-primary transition-colors py-2 border-b border-border/30"
+                >
+                  Запись
+                </button>
+                <button 
+                  onClick={() => scrollToSection('contacts')}
+                  className="text-left text-foreground hover:text-primary transition-colors py-2 border-b border-border/30"
+                >
+                  Контакты
+                </button>
+                <Button 
+                  onClick={() => scrollToSection('booking')} 
+                  className="gradient-gold text-white w-full mt-4"
+                >
+                  Записаться на прием
+                  <Icon name="ArrowRight" className="ml-2" size={16} />
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
